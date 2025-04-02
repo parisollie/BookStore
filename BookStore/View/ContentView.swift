@@ -9,11 +9,11 @@ import SwiftUI
 import StoreKit
 
 struct ContentView: View {
-    //Vid 250, traemos el environment object
+    //V-250,paso 2.0 traemos el environment object
     @EnvironmentObject private var store: Store
     
     var body: some View {
-        //Vid 250
+        //Paso 2.4
         NavigationView {
             ZStack {
                 // 🔹 Fondo con degradado
@@ -23,29 +23,33 @@ struct ContentView: View {
                     endPoint: .bottomTrailing
                 )
                 .edgesIgnoringSafeArea(.all) // Asegura que el degradado cubra toda la pantalla
-                
+                //Paso 2.5
                 List(store.allBooks, id: \.self) { book in
-                    //Vid 250 Hacemos un group para intercambiar el libro
+                    //Paso 2.6 Hacemos un group para intercambiar el libro
                     Group {
+                        //Si esta diferente de true
                         if !book.lock {
                             NavigationLink(destination: BookView()) {
                                 BookRowView(book: book) {}
                             }
                         } else {
                             BookRowView(book: book) {
-                                //Vid 250, Llamamos las últimas funciones cuando se compró la compra
+                                //paso 2.7, Llamamos las últimas funciones cuando se compró la compra
                                 if let product = store.product(for: book.id) {
                                     store.purchaseProduct(product: product)
                                 }
                             }
                         }
                     }
-                    .listRowBackground(Color.clear) // 🔹 Hace que cada fila sea transparente
+                    // 🔹 Hace que cada fila sea transparente
+                    .listRowBackground(Color.clear)
                 }
-                .scrollContentBackground(.hidden) // 🔹 Oculta el fondo de la lista, permitiendo que se vea el degradado
+                // 🔹 Oculta el fondo de la lista, permitiendo que se vea el degradado
+                .scrollContentBackground(.hidden)
+                
                 .navigationTitle("Book Store")
                 .toolbar {
-                    //Vid 250, restauramos la compra
+                    //Paso 2.8, restauramos la compra
                     Button("Restaurar compra") {
                         store.restorePurchase()
                     }

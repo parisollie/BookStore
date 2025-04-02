@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-//Vid 249 ,la vista donde se veria el libro despues de la compra 
+//paso 1.22 ,la vista donde se veria el libro despues de la compra 
 struct BookView: View {
     var body: some View {
         Text("Mostramos libro")

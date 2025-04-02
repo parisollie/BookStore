@@ -9,12 +9,15 @@ import SwiftUI
 import StoreKit
 
 struct BookRowView: View {
+    //Paso 2.1
     let book: Books
     let action: () -> Void
     
     var body: some View {
         HStack(spacing: 16) {
+           
             VStack(alignment: .leading, spacing: 4) {
+                //Paso 2.2
                 Text(book.title)
                     .font(.title2)
                     .fontWeight(.bold)
@@ -25,7 +28,9 @@ struct BookRowView: View {
                     .foregroundColor(.secondary)
                     .lineLimit(2)
             }
+            
             Spacer()
+            //Paso 2.3
             if let price = book.price, book.lock {
                 Button(action: action) {
                     Text(price)

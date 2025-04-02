@@ -10,13 +10,13 @@ import SwiftUI
 
 @main
 struct BookStoreApp: App {
-    //Vid 249
+    //Paso 1.20
     @StateObject private var store = Store()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-            //Propagamos nuestro store
+                //Paso 1.21,Propagamos nuestro store
                 .environmentObject(store)
         }
     }
