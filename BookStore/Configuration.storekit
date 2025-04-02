@@ -1,0 +1,96 @@
+{
+  "identifier" : "E0049008",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "83ECD5B3",
+      "localizations" : [
+        {
+          "description" : "Alexander Dumas",
+          "displayName" : "El Tulipan Negro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.paul.BookStore.BlTulip",
+      "referenceName" : "El tulipan Negro",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.00",
+      "familyShareable" : false,
+      "internalID" : "0ED242B9",
+      "localizations" : [
+        {
+          "description" : "Un amor británico",
+          "displayName" : "PauliHontas",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.paul.BookStore.Paulihontas",
+      "referenceName" : "PauliHontas",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.01",
+      "familyShareable" : false,
+      "internalID" : "D9B0EC60",
+      "localizations" : [
+        {
+          "description" : "Opugno",
+          "displayName" : "Hassiri y la sala de Menestere",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.paul.BookStore.HassiMen",
+      "referenceName" : "Hassiri y la sala de Menesteres",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "6D99F949",
+      "localizations" : [
+
+      ],
+      "name" : "Full Access",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "38A45D10",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Aceso completo",
+              "displayName" : "Full Access",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.paul.BookStore.FullAcc",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Full Access",
+          "subscriptionGroupID" : "6D99F949",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}
