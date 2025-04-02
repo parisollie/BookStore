@@ -1,4 +1,14 @@
 {
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
   "identifier" : "E0049008",
   "nonRenewingSubscriptions" : [
 
@@ -41,17 +51,67 @@
       "localizations" : [
         {
           "description" : "Opugno",
-          "displayName" : "Hassiri y la sala de Menestere",
+          "displayName" : "Hassiri y la sala de los Menesteres",
           "locale" : "en_US"
         }
       ],
       "productID" : "com.paul.BookStore.HassiMen",
-      "referenceName" : "Hassiri y la sala de Menesteres",
+      "promotionalImageID" : "9ACB04C4",
+      "referenceName" : "Hassiri y la sala de los Menesteres",
       "type" : "NonConsumable"
     }
   ],
   "settings" : {
-
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
   },
   "subscriptionGroups" : [
     {
@@ -84,13 +144,16 @@
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Full Access",
           "subscriptionGroupID" : "6D99F949",
-          "type" : "RecurringSubscription"
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         }
       ]
     }
   ],
   "version" : {
-    "major" : 2,
+    "major" : 4,
     "minor" : 0
   }
 }

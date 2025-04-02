@@ -9,29 +9,42 @@ import SwiftUI
 import StoreKit
 
 struct BookRowView: View {
-    let book : Books
-    //Vid 250,accion para nuesto boton
-    let action : () -> Void
+    let book: Books
+    let action: () -> Void
     
-    var body: some View{
-        HStack{
-            VStack(alignment: .leading){
+    var body: some View {
+        HStack(spacing: 16) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(book.title)
-                    .font(.title)
-                    .bold()
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                
                 Text(book.description)
                     .font(.subheadline)
-                    .bold()
+                    .foregroundColor(.secondary)
+                    .lineLimit(2)
             }
             Spacer()
             if let price = book.price, book.lock {
-                Button(action: action){
+                Button(action: action) {
                     Text(price)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .background(Color.blue)
+                        .cornerRadius(8)
                 }
             }
         }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(12)
+        .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
     }
 }
+
 
 
 #Preview {

@@ -9,40 +9,53 @@ import SwiftUI
 import StoreKit
 
 struct ContentView: View {
-    //Vid 250,traemos el enviroment objet
+    //Vid 250, traemos el environment object
     @EnvironmentObject private var store: Store
     
     var body: some View {
         //Vid 250
-        NavigationView{
-            List(store.allBooks, id:\.self){ book in
-                //Vid 250 Hacemos un grop para intercambiar el libro
-                Group {
-                    if !book.lock {
-                        NavigationLink(destination: BookView()){
-                            BookRowView(book: book) {}
-                        }
-                    }else{
-                        BookRowView(book: book) {
-                            //Vid 250, Llamamos las ultimas funciones cuando se compro la compra
-                            if let product = store.product(for: book.id){
-                                store.purchaseProduct(product: product)
+        NavigationView {
+            ZStack {
+                // 🔹 Fondo con degradado
+                LinearGradient(
+                    gradient: Gradient(colors: [Color.blue.opacity(0.6), Color.purple.opacity(0.6)]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .edgesIgnoringSafeArea(.all) // Asegura que el degradado cubra toda la pantalla
+                
+                List(store.allBooks, id: \.self) { book in
+                    //Vid 250 Hacemos un group para intercambiar el libro
+                    Group {
+                        if !book.lock {
+                            NavigationLink(destination: BookView()) {
+                                BookRowView(book: book) {}
+                            }
+                        } else {
+                            BookRowView(book: book) {
+                                //Vid 250, Llamamos las últimas funciones cuando se compró la compra
+                                if let product = store.product(for: book.id) {
+                                    store.purchaseProduct(product: product)
+                                }
                             }
                         }
                     }
+                    .listRowBackground(Color.clear) // 🔹 Hace que cada fila sea transparente
                 }
-                
-            }.navigationTitle("Book Store")
+                .scrollContentBackground(.hidden) // 🔹 Oculta el fondo de la lista, permitiendo que se vea el degradado
+                .navigationTitle("Book Store")
                 .toolbar {
-                    //Vid 250,restauramos la compra 
-                    Button("Restaurar compra"){
+                    //Vid 250, restauramos la compra
+                    Button("Restaurar compra") {
                         store.restorePurchase()
                     }
+                    // 🔹 Cambiamos el color de la letra a blanco
+                    .foregroundColor(.white)
                 }
+            }
         }
     }
 }
-
 
 
 
